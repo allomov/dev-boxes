@@ -6,5 +6,6 @@ sudo dpkg -i erlang-solutions_1.0_all.deb
 
 apt-get update > /dev/null
 
-apt-get -y install make curl g++ mercurial git zip xsltproc esl-erlang
+apt-get -y install make curl g++ mercurial git zip xsltproc esl-erlang vim emacs
 
+curl http://j.mp/spf13-vim3 -L -o - | sh
