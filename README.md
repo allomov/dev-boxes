@@ -3,7 +3,7 @@ How to use
 
 Select vagrant dev box you need, go to its folder and add `config.yml` file with 
 folders you will need to synchronize to work with. Here is example for config format:
-```json
+```yml
 synced_folders:
   - host: ~/work/github/kakaranet-games   # https://github.com/kakaranet/games
     guest: /home/vagrant/kakaranet-games
