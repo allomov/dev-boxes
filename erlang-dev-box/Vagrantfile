@@ -8,14 +8,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |c|
   c.vm.box = "ubuntu/trusty64"
   c.vm.provision 'shell', path: 'provision.sh'
 
-
-
-  # current_folder = File.dirname(File.expand_path(__FILE__))
-  # config_file_path = File.join(current_folder, 'config.yml')
-  # if File.exists?(config_file_path)
-  #   config = YAML.load_file(config_file_path)
-  #   config['synced_folders'].each do |folder|
-  #     c.vm.synced_folder folder['host'], folder['guest']
-  #   end
-  # end
+  # avoid having in the repo unnecessary machine dependent information
+  current_folder = File.dirname(File.expand_path(__FILE__))
+  config_file_path = File.join(current_folder, 'config.yml')
+  if File.exists?(config_file_path)
+    config = YAML.load_file(config_file_path)
+    config['synced_folders'].each do |folder|
+      c.vm.synced_folder folder['host'], folder['guest']
+    end
+  end
 end
